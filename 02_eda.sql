@@ -89,11 +89,12 @@ COUNT(*) AS antal_beviljade_ansökningar
 FROM tabell3
 WHERE 
 (beslut = 'Beviljad')
+--För att räkna bort "Flera kommuner" och endast få individuella kommuner
 AND 
 (län != 'Flera kommuner')
 GROUP BY län
 ORDER BY antal_beviljade_ansökningar DESC
--- Alternativt, 'FETCH FIRST 6...', och ta bort '(län != 'Flera kommuner)' för att inkl. multi-kommun utbildningar i listan.
+-- Alternativt, 'FETCH FIRST 6...', och ta bort '(län != 'Flera kommuner)' för att inkludera multi-kommun utbildningar i listan.
 FETCH FIRST 5 ROWS ONLY;
 
 
@@ -101,17 +102,17 @@ PROMPT === h) ===
 
 --h) Andel distans samt bundna utbildningar inom respektive utbildningsområde
 -- EJ KLAR
---SELECT område, studieform
---FROM tabell3
---WHERE studieform = 'Bunden'
+SELECT område, studieform
+FROM tabell3
+WHERE studieform = 'Bunden'
 
---FETCH FIRST 10 ROWS ONLY;
---;
+
+;
 
 PROMPT === i) ===
 
 ---i) Antal utbildningar som innehåller ordet 'AI'
-SELECT område, utbildning_namn, utbildningsanordnare_adm_enhet
+SELECT område, utbildning_namn, diarienummer, utbildningsanordnare_adm_enhet
 FROM tabell3
 WHERE utbildning_namn LIKE 'AI %'
 OR utbildning_namn LIKE '% AI'
@@ -119,6 +120,7 @@ OR utbildning_namn LIKE '% AI %'
 ORDER BY område ASC
 ;
 
+--Ger en siffra med antalet rader
 SELECT COUNT(*) AS Totala_program_innehåller_AI
 FROM tabell3
 WHERE utbildning_namn LIKE 'AI %'
