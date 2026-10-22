@@ -97,30 +97,35 @@ ORDER BY antal_beviljade_ansökningar DESC
 -- Alternativt, 'FETCH FIRST 6...', och ta bort '(län != 'Flera kommuner)' för att inkludera multi-kommun utbildningar i listan.
 FETCH FIRST 5 ROWS ONLY;
 
+-- "Problemet" är att 
+
 
 PROMPT === h) ===
 
 --h) Andel distans samt bundna utbildningar inom respektive utbildningsområde
 -- EJ KLAR
-SELECT område, studieform
+
+-- Plockar ut två rader per område, en för distans, en för bunden.
+SELECT område, studieform,
+COUNT(*) AS antal
 FROM tabell3
-WHERE studieform = 'Bunden'
+GROUP BY område, studieform
+ORDER BY område, studieform;
 
 
-;
 
 PROMPT === i) ===
 
----i) Antal utbildningar som innehåller ordet 'AI'
+---i) Listar alla utbildningar som innehåller ordet 'AI'
 SELECT område, utbildning_namn, diarienummer, utbildningsanordnare_adm_enhet
 FROM tabell3
-WHERE utbildning_namn LIKE 'AI %'
-OR utbildning_namn LIKE '% AI'
-OR utbildning_namn LIKE '% AI %'
+WHERE utbildning_namn LIKE 'AI %' -- Där titeln börjar på "AI"
+OR utbildning_namn LIKE '% AI' -- Där titeln slutar på "AI"
+OR utbildning_namn LIKE '% AI %' -- Där titeln innehåller "AI" i mitten
 ORDER BY område ASC
 ;
 
---Ger en siffra med antalet rader
+-- Ger en siffra med antalet utbildningar
 SELECT COUNT(*) AS Totala_program_innehåller_AI
 FROM tabell3
 WHERE utbildning_namn LIKE 'AI %'
