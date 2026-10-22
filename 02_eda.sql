@@ -97,21 +97,33 @@ ORDER BY antal_beviljade_ansökningar DESC
 -- Alternativt, 'FETCH FIRST 6...', och ta bort '(län != 'Flera kommuner)' för att inkludera multi-kommun utbildningar i listan.
 FETCH FIRST 5 ROWS ONLY;
 
--- "Problemet" är att 
-
 
 PROMPT === h) ===
-
+PROMPT
+--PROMPT == Version A ==
+--PROMPT Lista över respektive område samt hur många platsbundna, respektive distansprogram, är sökta. 
 --h) Andel distans samt bundna utbildningar inom respektive utbildningsområde
--- EJ KLAR
-
 -- Plockar ut två rader per område, en för distans, en för bunden.
-SELECT område, studieform,
-COUNT(*) AS antal
-FROM tabell3
-GROUP BY område, studieform
-ORDER BY område, studieform;
+--SELECT område, studieform,
+--COUNT(*) AS antal
+--FROM tabell3
+--GROUP BY område, studieform
+--ORDER BY område, studieform;
 
+PROMPT == Version B ==
+-- För att räkna ut procentuell skillnad
+
+SELECT område,
+COUNT(*) AS antal_totalt,
+-- Listar områdena och dess antal bundna/ distans i siffror
+SUM(CASE WHEN studieform = 'Distans' THEN 1 ELSE 0 END) AS antal_distans,
+SUM(CASE WHEN studieform = 'Bunden' THEN 1 ELSE 0 END) AS antal_bundnda,
+-- Listar områdena och dess antal bundna/ distans procentuellt
+ROUND(SUM(CASE WHEN studieform = 'Distans' THEN 1 ELSE 0 END) / COUNT(*) * 100, 1) AS andel_distans_procent,
+ROUND(SUM(CASE WHEN studieform = 'Bunden' THEN 1 ELSE 0 END) / COUNT(*) * 100, 1) AS andel_bundna_procent
+FROM tabell3
+GROUP BY område
+ORDER BY område;
 
 
 PROMPT === i) ===
