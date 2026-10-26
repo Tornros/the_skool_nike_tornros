@@ -8,7 +8,8 @@ Welcome! For this assignment, I have created a set of SQL scripts to organize an
 
 ## Script functions
 
-'01_load_data.sql' 
+´01_load_data.sql´
+
 
 ## EDA walktrough
 
