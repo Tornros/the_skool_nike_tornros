@@ -1,22 +1,48 @@
-## Introduction
+## Introduktion
 
-Welcome! For this assignment, I have created a set of SQL scripts to organize and explore a dataset provided by MYH - Myndiheten för Yrkeshögskolan. Link to video pitch. 
+Välkommen! Jag har skapat en serie SQL-script som sorterar och svarar på frågor kring utbildningsdata tillhandahållen av MYH - Myndigheten för Yrkeshögskolan. Länk till videopitch[länk]
 
-## Prelminiary work
+## GitHub-struktur
 
-Before creating any scripts, some minor cleanup of the provided data was neccesary. As only table 3 from "resultat-ansokningsomgang-2025" was relevant, this table alone was exported from the dataset. The first 6 rows of the table was deleted as well, as they contained no data. See figure 1 below. 
+Alla SQL-script ligger direkt i repot. 
 
-![Figure 1]
+`admin` innehåller bilder samt `05_old_q5_script.sql`, ett oanvänt script som användes i Uppgift 1.
 
-*Fig. 1*
+## 1. Inledande förarbete
 
-The file was then exported as a .csv file and imported into the machine.
+Innan scripten skapas skedde mindre strukturering av datan. Då endast tabell 3 från "resultat-ansokningsomgang-2025" var nödvändig för denna uppgift, exporterades endast denna tabell. De första 6 raderna raderades även, då dessa ej innehöll någon relevant data. Se bild 1. 
 
-## Script functions
+![Bild 1](/admin/figures/bild_1.png)
 
-`01_load_data.sql` loads our data, tabell_3.csv, into a workable 
+*Bild 1*
 
+Filen exporterades sedan som en .csv fil och importerades.
 
-## EDA walktrough
+## 2. Repo filer & scriptfunktioner
 
+`tabell_3.csv` vår data, exporterad från "resultat-ansokningsomgang-2025".
 
+`01_load_data.sql` laddar in datan och skapar tabellen "tabell3" i databasen.
+
+`02_basic_eda.sql` svarar på frågorna ställda i *Uppgift 1*.
+
+`03_update_table.sql` används för att redigera tabeller. Skapades för att rätta till mindre stavfel. 
+
+`04_data_driven_questions.sql` svarar på utökade EDA-frågor, baserat på interju med domänexpert under *Uppgift 2*. Se komplett lista i kapitel 3.
+
+## 3. Datadrivna beslut - Uppgift 3
+
+Fråga 1: 
+Vilka områden är lägst belastade i respektive län?
+
+Fråga 2:
+Hur stor andel privata jämfört med regionala och kommunala utbildningsanordnare beviljas?
+
+Fråga 3:
+Hur många omgångar är vanligast att söka? Vilken mängd omgångar blir oftast beviljade?
+
+Fråga 4:
+Vilken SUN5-grupp är mins belastad?
+
+Fråga 5:
+Hur stor andel distansutbildningar blir beviljade jämfört med platsbundna, i de olika områdena?
