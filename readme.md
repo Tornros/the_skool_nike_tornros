@@ -1,6 +1,6 @@
 ## 1. Introduktion
 
-Välkommen! Jag har skapat en serie SQL-script som sorterar och svarar på frågor kring utbildningsdata tillhandahållen av MYH: Myndigheten för Yrkeshögskolan. Länk till videopitch[länk]
+Välkommen! Jag har skapat en serie SQL-script som sorterar och svarar på frågor kring utbildningsdata tillhandahållen av MYH: Myndigheten för Yrkeshögskolan. [Länk till videopitch](https://youtu.be/L-koj5tpVZk).
 
 
 ## 2. GitHub-struktur
