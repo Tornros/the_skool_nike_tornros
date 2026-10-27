@@ -32,11 +32,11 @@ PROMPT === c) ===
 --c) Antal nekade ansökningar per utbildningsområde.
 -- Samma princip, men med 'Avslag' som krav.
 SELECT område,
-COUNT(*) AS antal_nekade_ansökningar
+COUNT(*) AS antal_avslagna_ansökningar
 FROM tabell3
 WHERE beslut = 'Avslag'
 GROUP BY område
-ORDER BY antal_nekade_ansökningar DESC;
+ORDER BY antal_avslagna_ansökningar DESC;
 
 PROMPT === d) ===
 
@@ -51,6 +51,12 @@ AND
 (område = 'Data/IT')
 GROUP BY utbildning_namn
 ORDER BY utbildning_namn DESC;
+
+
+SELECT COUNT(*)
+FROM tabell3
+WHERE beslut = ‘Beviljad’
+AND område = ‘Data/IT’;
 
 PROMPT === e) ===
 
@@ -70,7 +76,7 @@ PROMPT === f) ===
 
 --f) Antal beviljade ansökningar per utbildningsanordnare adm. enhet & utbildningsnamn, inom Data/IT.
 SELECT utbildning_namn, utbildningsanordnare_adm_enhet,
-COUNT(*) AS antal_beviljade_Data_IT
+COUNT(*) AS antal_beviljade
 FROM tabell3
 WHERE
 (beslut = 'Beviljad')

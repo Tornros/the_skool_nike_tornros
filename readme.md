@@ -49,7 +49,7 @@ The Skool är en privat aktör, därför kan statistik kring i hur stor utsträc
 
 
 **Fråga 3:**
-*Hur många omgångar är vanligast att söka? Vilken mängd omgångar blir oftast beviljade?*
+*Vilken mängd omgångar är vanligast att söka? Vilken mängd omgångar blir oftast beviljade?*
 
 Utbildningar kan sökas i olika antal omgångar och för att det ska vara lönsamt att hålla en utbildning kör anordnare ofta mer än en omgång. Frågan undersöker hur många omgångar som generellt söks, samt i vilken utsträckning de blir beviljade. 
 

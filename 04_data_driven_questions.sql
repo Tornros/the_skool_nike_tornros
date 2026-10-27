@@ -25,7 +25,7 @@ FROM tabell3
 	WHERE område NOT IN (
 	    SELECT område
 	    FROM tabell3
-	    WHERE län = 'Blekinge'
+	    WHERE län = 'Uppsala'
 );
 
 -- Fråga 2:
@@ -43,24 +43,24 @@ SELECT län, område,
 	ROUND(SUM(CASE WHEN huvudmannatyp = 'Region' THEN 1 ELSE 0 END) / COUNT(*) * 100, 1) AS "%_regional_aktör",
 	-- Avslagna vs. beviljade ansökningar för privata aktörer
 	-- Endast privata är inräknade här, då The Skool själva är en privat aktör
-	SUM(CASE WHEN huvudmannatyp = 'Privat' AND beslut = 'Avslag' THEN 1 ELSE 0 END) AS privat_avslagen,
-	SUM(CASE WHEN huvudmannatyp = 'Privat' AND beslut = 'Beviljad' THEN 1 ELSE 0 END) AS privat_beviljad
+	ROUND(SUM(CASE WHEN huvudmannatyp = 'Privat' AND beslut = 'Avslag' THEN 1 ELSE 0 END) / COUNT(*) * 100,1) AS "%_privat_avslagen",
+	ROUND(SUM(CASE WHEN huvudmannatyp = 'Privat' AND beslut = 'Beviljad' THEN 1 ELSE 0 END) / COUNT(*) * 100,1) AS "%_privat_beviljad"
 FROM tabell3
 -- För att slippa 200+ rader kan vi limitera per t.ex län:
-WHERE län = 'Uppsala'
+WHERE län = 'Stockholm'
 GROUP BY län, område
 ORDER BY län, område;
 
 
 -- Fråga 3:
 PROMPT '=== Fråga 3 ==='
-PROMPT Hur många omgångar är vanligast att söka? Vilken mängd omgångar blir oftast beviljade?
+PROMPT Vilken mängd omgångar är vanligast att söka? Vilken mängd omgångar blir oftast beviljade?
 
 SELECT sökta_omgångar,
 -- Hur många unika utbildningar som har sökt respektive mängd omgångar:
 	COUNT(*) AS ansökta_utbildningar,
 	COUNT(CASE WHEN beviljade_omgångar > 0 THEN 1 END) antal_beviljade,
-	ROUND(COUNT(CASE WHEN beviljade_omgångar > 0 THEN 1 END) / COUNT(*) * 100, 1) AS andel_beviljade_procent
+	ROUND(COUNT(CASE WHEN beviljade_omgångar > 0 THEN 1 END) / COUNT(*) * 100,1) beviljade_procent
 FROM tabell3
 GROUP BY sökta_omgångar
 ORDER BY sökta_omgångar;
@@ -76,7 +76,7 @@ SELECT område, sun5_namn,
 FROM tabell3
 -- För att slippa långa svar, sortera på specifika utbildningsområden
 -- Ändra 'Data/IT' till önskat område:
-WHERE område = 'Data/IT'
+WHERE område = 'Kultur, media och design'
 GROUP BY område, sun5_namn
 ORDER BY område, antal_ansökningar DESC;
 
