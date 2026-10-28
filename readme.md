@@ -39,28 +39,28 @@ Efter en intervju med The Skools representant formulerade jag följande fem frå
 **Fråga 1:**
 *Vilka områden är lägst belastade i respektive län?*
 
-Olika yrkesområden kan ha olika tung ellet lätt belastning i länen. Ett tungt belastat område är med största sannolikhet svårare att bryta sig in i, då det redan finns en stor mängd etablerade utbildningar och utbildningsarnordnare. 
+Motivering: Olika yrkesområden kan ha olika tung eller lätt belastning i länen. Ett tungt belastat område är svårare att bryta sig in i, då det redan finns en stor mängd etablerade utbildningar och utbildningsarnordnare. 
 
 
 **Fråga 2:**
 *Hur stor andel privata, jämfört med regionala och kommunala, utbildningsanordnare beviljas?*
 
-The Skool är en privat aktör, därför kan statistik kring i hur stor utsträckning privata aktörer, jämfört med regionala eller kommunala, får sina ansökta utbildningar beviljade.
+Motivering: The Skool är en privat aktör, därför kan statistik kring i hur stor utsträckning privata aktörer, jämfört med regionala eller kommunala, får sina ansökta utbildningar beviljade. Om det finns områden där privata aktörer i högre grad får beviljade utbildningar är detta av intresse. 
 
 
 **Fråga 3:**
 *Vilken mängd omgångar är vanligast att söka? Vilken mängd omgångar blir oftast beviljade?*
 
-Utbildningar kan sökas i olika antal omgångar och för att det ska vara lönsamt att hålla en utbildning kör anordnare ofta mer än en omgång. Frågan undersöker hur många omgångar som generellt söks, samt i vilken utsträckning de blir beviljade. 
+Motivering: Utbildningar kan sökas i olika antal omgångar och för att det ska vara lönsamt att hålla en utbildning kör anordnare ofta mer än en omgång. Frågan undersöker hur många omgångar som generellt söks, samt i vilken utsträckning de blir beviljade. 
 
 
 **Fråga 4:**
 *Vilken SUN5-grupp är minst belastad?*
 
-Utbildningsområden delas vidare in i smalare SUN5-grupperingar. Där vissa områden är tungt belastade, kan det finns SUN5-grupper som är mindre belastade och i större utsträckning får godkännt eller är lättare att bryta sig in i. 
+Motivering: Utbildningsområden delas vidare in i smalare SUN5-grupperingar. Där vissa områden är tungt belastade, kan det finns SUN5-grupper som är mindre belastade och i större utsträckning får godkännt eller är lättare att bryta sig in i. 
 
 
 **Fråga 5:**
 *Hur stor andel distansutbildningar blir beviljade jämfört med platsbundna, i de olika områdena?*
 
-The Skool är öppna för att utbilda både på plats och distans. Frågan undersöker om det finns mönster i om distans- eller platsbundna undervisningar i större eller lägre utsträckning får utbildningar beviljade. 
+Motivering: The Skool är öppna för att utbilda både på plats och distans. Frågan undersöker om det finns mönster i om distans- eller platsbundna undervisningar i större eller lägre utsträckning får utbildningar beviljade. 
