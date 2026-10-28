@@ -25,7 +25,7 @@ FROM tabell3
 	WHERE område NOT IN (
 	    SELECT område
 	    FROM tabell3
-	    WHERE län = 'Uppsala'
+	    WHERE län = 'Blekinge'
 );
 
 -- Fråga 2:
@@ -76,7 +76,7 @@ SELECT område, sun5_namn,
 FROM tabell3
 -- För att slippa långa svar, sortera på specifika utbildningsområden
 -- Ändra 'Data/IT' till önskat område:
-WHERE område = 'Kultur, media och design'
+WHERE område = 'Data/IT'
 GROUP BY område, sun5_namn
 ORDER BY område, antal_ansökningar DESC;
 
