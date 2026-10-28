@@ -137,18 +137,16 @@ PROMPT === i) ===
 ---i) Listar alla utbildningar som innehåller ordet 'AI'
 SELECT område, utbildning_namn, diarienummer, utbildningsanordnare_adm_enhet
 FROM tabell3
-WHERE utbildning_namn LIKE 'AI %' -- Där titeln börjar på "AI"
-OR utbildning_namn LIKE '% AI' -- Där titeln slutar på "AI"
-OR utbildning_namn LIKE '% AI %' -- Där titeln innehåller "AI" i mitten
-ORDER BY område ASC
+WHERE 
+utbildning_namn LIKE '%AI%'
+ORDER BY utbildningsanordnare_adm_enhet, område ASC
 ;
 
 -- Ger en siffra med antalet utbildningar
 SELECT COUNT(*) AS Totala_program_innehåller_AI
 FROM tabell3
-WHERE utbildning_namn LIKE 'AI %'
-OR utbildning_namn LIKE '% AI'
-OR utbildning_namn LIKE '% AI %'
+WHERE 
+utbildning_namn LIKE '%AI%'
 ;
 
 EXIT
